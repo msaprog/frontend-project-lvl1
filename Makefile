@@ -9,6 +9,3 @@ publish: #
 
 lint: # Запуск Eslint с исправлениями
 	npx eslint --fix .
-
-test: # 
-	npm test
