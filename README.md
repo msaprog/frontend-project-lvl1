@@ -8,12 +8,4 @@
 
 ### GitHub Actions status:
 
-![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
-
-![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=feature-1)
-
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
-
-### Fof test status:
-
-### Fof test status:
+![example workflow](https://github.com/msaprog/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)
