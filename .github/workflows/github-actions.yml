@@ -32,6 +32,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - run: npm ci
       - run: make lint
       # - name: Test & publish code coverage
       #   # Publish code coverage on Code Climate
