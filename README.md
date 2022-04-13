@@ -9,6 +9,3 @@
 ### GitHub Actions status:
 
 [![example workflow](https://github.com/msaprog/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)](https://github.com/msaprog/frontend-project-lvl1/actions/workflows/github-actions.yml)
-
-
-121212
