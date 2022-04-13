@@ -8,4 +8,4 @@
 
 ### GitHub Actions status:
 
-[![Node JJJJJ](https://github.com/msaprog/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)](https://github.com/msaprog/frontend-project-lvl1/actions/workflows)
+[![example workflow](https://github.com/msaprog/frontend-project-lvl1/actions/workflows/github-actions.yml/badge.svg)](https://github.com/msaprog/frontend-project-lvl1/actions/workflows/github-actions.yml)
