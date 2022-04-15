@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { askStr, getRandomInt } from '../src/index.js';
 
+// fifth task
 console.log('Welcome to the Brain Games!');
 const name = askStr('May I have your name? ');
 console.log(`Hello, ${name}!`);
@@ -9,6 +10,7 @@ console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 const minNumRandom = 1;
 const maxNumRandom = 100;
+
 let countRightAnswer = 0;
 
 while (countRightAnswer < 3) {
