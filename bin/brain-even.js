@@ -1,12 +1,5 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-
-const askStr = (ask) => {
-  const str = readlineSync.question(ask);
-  return str;
-};
+import { askStr, getRandomInt } from '../src/index.js';
 
 console.log('Welcome to the Brain Games!');
 const name = askStr('May I have your name? ');
