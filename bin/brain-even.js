@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { askStr, getRandomInt } from '../src/index.js';
+import _ from 'lodash';
+import { askStr } from '../src/index.js';
 
 // fifth task
 console.log('Welcome to the Brain Games!');
@@ -14,7 +15,7 @@ const maxNumRandom = 100;
 let countRightAnswer = 0;
 
 while (countRightAnswer < 3) {
-  const num = getRandomInt(minNumRandom, maxNumRandom);
+  const num = _.random(minNumRandom, maxNumRandom);
   console.log(`Question: ${num}`);
   const answer = askStr('Your answer: ');
 
