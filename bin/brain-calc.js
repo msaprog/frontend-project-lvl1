@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import _ from 'lodash';
-import { welcome, askStr } from '../src/index.js';
+import { welcome, goodbye, askStr } from '../src/index.js';
 
 // sixth task
 const name = welcome();
@@ -42,10 +42,4 @@ while (countRightAnswer < 3) {
   }
 }
 
-if (countRightAnswer === 3) {
-  console.log(`Congratulations, ${name}!`);
-} else {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`);
-  // ??????????????????????????????????????????
-  console.log(`Let's try again, ${name}!`);
-}
+goodbye(name, countRightAnswer, answer, result);

@@ -14,3 +14,12 @@ export const welcome = () => {
   console.log(`Hello, ${nameUser}!`);
   return nameUser;
 };
+
+export const goodbye = (name, countRightAnswer, wrong, right) => {
+  if (countRightAnswer === 3) {
+    console.log(`Congratulations, ${name}!`);
+  } else {
+    console.log(`'${wrong}' is wrong answer ;(. Correct answer was '${right}'.`);
+    console.log(`Let's try again, ${name}!`);
+  }
+};
