@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 import _ from 'lodash';
-import { askStr } from '../src/index.js';
+import { welcome, askStr } from '../src/index.js';
 
 // fifth task
-console.log('Welcome to the Brain Games!');
-const name = askStr('May I have your name? ');
-console.log(`Hello, ${name}!`);
+const name = welcome();
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
