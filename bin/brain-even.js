@@ -1,31 +1,9 @@
 #!/usr/bin/env node
-import _ from 'lodash';
-import { welcome, goodbye, askStr } from '../src/index.js';
+import { welcome, taskEven, goodbye } from '../src/index.js';
 
 // fifth task
-const name = welcome();
+const name = welcome('Answer "yes" if the number is even, otherwise answer "no".');
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-const minNumRandom = 1;
-const maxNumRandom = 100;
-
-let countRightAnswer = 0;
-
-while (countRightAnswer < 3) {
-  const num = _.random(minNumRandom, maxNumRandom);
-  console.log(`Question: ${num}`);
-  const answer = askStr('Your answer: ');
-
-  if (answer === 'yes' && num % 2 === 0) {
-    console.log('Correct!');
-    countRightAnswer += 1;
-  } else if (answer === 'no' && num % 2 !== 0) {
-    console.log('Correct!');
-    countRightAnswer += 1;
-  } else {
-    break;
-  }
-}
+const countRightAnswer = taskEven();
 
 goodbye(name, countRightAnswer, 'yes', 'no');
