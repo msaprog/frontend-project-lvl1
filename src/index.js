@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import readlineSync from 'readline-sync';
 
 const askStr = (ask) => {
@@ -18,6 +17,9 @@ const checkPrime = (checkNum) => {
   }
   return true;
 };
+
+// all task
+const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 // all task
 export const welcome = (info) => {
@@ -44,7 +46,7 @@ export const taskEven = () => {
   let countRightAnswer = 0;
 
   while (countRightAnswer < 3) {
-    const num = _.random(minNumRandom, maxNumRandom);
+    const num = getRandom(minNumRandom, maxNumRandom);
     console.log(`Question: ${num}`);
     const answer = askStr('Your answer: ');
 
@@ -72,10 +74,10 @@ export const taskCalc = () => {
   let countRightAnswer = 0;
 
   while (countRightAnswer < 3) {
-    const firstNum = _.random(minNumRandom, maxNumRandom);
-    const secondNum = _.random(minNumRandom, maxNumRandom);
+    const firstNum = getRandom(minNumRandom, maxNumRandom);
+    const secondNum = getRandom(minNumRandom, maxNumRandom);
     const signColl = ['+', '-', '*'];
-    const signCollIndex = _.random(minNumSignColl, maxNumSignColl);
+    const signCollIndex = getRandom(minNumSignColl, maxNumSignColl);
     const signStr = signColl[signCollIndex];
 
     if (signCollIndex === 0) {
@@ -107,8 +109,8 @@ export const taskGcd = () => {
   let countRightAnswer = 0;
 
   while (countRightAnswer < 3) {
-    const firstNum = _.random(minNumRandom, maxNumRandom);
-    const secondNum = _.random(minNumRandom, maxNumRandom);
+    const firstNum = getRandom(minNumRandom, maxNumRandom);
+    const secondNum = getRandom(minNumRandom, maxNumRandom);
 
     if (firstNum > secondNum) {
       result = secondNum;
@@ -148,8 +150,8 @@ export const taskProgression = () => {
   let question;
 
   while (countRightAnswer < 3) {
-    let num = _.random(minNumRandom, maxNumRandom);
-    const step = _.random(minStepRandom, maxStepRandom);
+    let num = getRandom(minNumRandom, maxNumRandom);
+    const step = getRandom(minStepRandom, maxStepRandom);
     const progression = [];
 
     for (let i = 1; i < 11; i += 1) {
@@ -157,7 +159,7 @@ export const taskProgression = () => {
       num += step;
     }
 
-    question = _.random(minStepRandom - 1, maxStepRandom - 1);
+    question = getRandom(minStepRandom - 1, maxStepRandom - 1);
     result = progression[question];
     progression[question] = '..';
 
@@ -180,7 +182,7 @@ export const taskPrime = () => {
   let countRightAnswer = 0;
 
   while (countRightAnswer < 3) {
-    const num = _.random(minNumRandom, maxNumRandom);
+    const num = getRandom(minNumRandom, maxNumRandom);
     console.log(`Question: ${num}`);
     const answer = askStr('Your answer: ');
 
