@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { welcome, taskCalc, goodbye } from '../src/index.js';
+import { welcome, taskCalc, goodbye } from '../index.js';
 
 // sixth task
 const name = welcome('What is the result of the expression?');
