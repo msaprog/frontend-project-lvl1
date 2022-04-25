@@ -6,6 +6,7 @@ const askStr = (ask) => {
   return str;
 };
 
+// brain-prime
 const checkPrime = (checkNum) => {
   if (checkNum === 1) {
     return false;
