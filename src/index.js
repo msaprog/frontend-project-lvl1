@@ -7,6 +7,9 @@ const askStr = (ask) => {
 };
 
 const checkPrime = (checkNum) => {
+  if (checkNum === 1){
+    return false;
+  };
   for (let i = 2; i < checkNum; i += 1) {
     if (!(checkNum % i)) {
       return false;
