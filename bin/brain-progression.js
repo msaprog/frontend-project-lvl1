@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { welcome, taskProgression, goodbye } from '../index.js';
+import { welcome, goodbye } from '../src/index.js';
+import { taskProgression } from '../src/games/game-progression.js';
 
 // eighth task
 const name = welcome('What number is missing in the progression?');

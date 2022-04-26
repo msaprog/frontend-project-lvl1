@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { welcome, taskGcd, goodbye } from '../index.js';
-
+import { welcome, goodbye } from '../src/index.js';
+import { taskGcd } from '../src/games/game-gcd.js';
 // seventh task
 const name = welcome('Find the greatest common divisor of given numbers.');
 
