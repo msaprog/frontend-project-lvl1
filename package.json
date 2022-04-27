@@ -1,5 +1,5 @@
 {
-  "name": "brain-games-msa",
+  "name": "@hexlet/code",
   "version": "1.0.2",
   "description": "[![Actions Status](https://github.com/msaprog/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/msaprog/frontend-project-lvl1/actions)",
   "type": "module",
