@@ -9,7 +9,9 @@
 1. Скачать и установить Node.js версии 13 и выше:
 
 sudo apt-get install curl
+
 curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+
 sudo apt install -y nodejs
 
 2. Установить пакет brain-games-msa:
@@ -19,18 +21,23 @@ npm install brain-games-msa
 3. Запустить игру:
 
 Определение четного числа.
+
 npx brain-even
 
 Калькулятор. Арифметические выражения, которые необходимо вычислить.
+
 npx brain-calc
 
 Определение наибольшего общего делителя.
+
 npx brain-gcd
 
 Прогрессия. Поиск пропущенных чисел в последовательности чисел.
+
 npx brain-progression
 
 Определение простого числа
+
 npx brain-prime
 
 
