@@ -41,7 +41,6 @@ npx brain-progression
 npx brain-prime
 
 
-
 Brain-even
 
 [![asciicast](https://asciinema.org/a/KI8Q3he3L7pS2MhFctpNTGOfy.svg)](https://asciinema.org/a/KI8Q3he3L7pS2MhFctpNTGOfy)
