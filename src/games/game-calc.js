@@ -1,8 +1,11 @@
-import { getRandom, askStr } from '../index.js';
+import {
+  welcome, getRandom, askStr, goodbye,
+} from '../index.js';
 
-export const taskCalc = () => {
-  const minNumRandom = 1;
-  const maxNumRandom = 100;
+// sixth task
+const taskCalc = () => {
+  const minNum = 1;
+  const maxNum = 100;
   const minNumSignColl = 0;
   const maxNumSignColl = 2;
 
@@ -11,8 +14,8 @@ export const taskCalc = () => {
   let countRightAnswer = 0;
 
   while (countRightAnswer < 3) {
-    const firstNum = getRandom(minNumRandom, maxNumRandom);
-    const secondNum = getRandom(minNumRandom, maxNumRandom);
+    const firstNum = getRandom(minNum, maxNum);
+    const secondNum = getRandom(minNum, maxNum);
     const signColl = ['+', '-', '*'];
     const signCollIndex = getRandom(minNumSignColl, maxNumSignColl);
     const signStr = signColl[signCollIndex];
@@ -38,4 +41,8 @@ export const taskCalc = () => {
   return { countRightAnswer, answer, result };
 };
 
-export default taskCalc;
+const name = welcome('What is the result of the expression?');
+
+const { countRightAnswer, answer, result } = taskCalc();
+
+goodbye(name, countRightAnswer, answer, result);

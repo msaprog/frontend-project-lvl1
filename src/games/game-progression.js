@@ -1,10 +1,13 @@
-import { getRandom, askStr } from '../index.js';
+import {
+  welcome, getRandom, askStr, goodbye,
+} from '../index.js';
 
-export const taskProgression = () => {
-  const minNumRandom = 1;
-  const maxNumRandom = 50;
-  const minStepRandom = 1;
-  const maxStepRandom = 10;
+// eighth task
+const taskProgression = () => {
+  const minNum = 1;
+  const maxNum = 50;
+  const minStep = 1;
+  const maxStep = 10;
 
   let countRightAnswer = 0;
   let result;
@@ -12,8 +15,8 @@ export const taskProgression = () => {
   let question;
 
   while (countRightAnswer < 3) {
-    let num = getRandom(minNumRandom, maxNumRandom);
-    const step = getRandom(minStepRandom, maxStepRandom);
+    let num = getRandom(minNum, maxNum);
+    const step = getRandom(minStep, maxStep);
     const progression = [];
 
     for (let i = 1; i < 11; i += 1) {
@@ -21,7 +24,7 @@ export const taskProgression = () => {
       num += step;
     }
 
-    question = getRandom(minStepRandom - 1, maxStepRandom - 1);
+    question = getRandom(minStep - 1, maxStep - 1);
     result = progression[question];
     progression[question] = '..';
 
@@ -38,4 +41,8 @@ export const taskProgression = () => {
   return { countRightAnswer, answer, result };
 };
 
-export default taskProgression;
+const name = welcome('What number is missing in the progression?');
+
+const { countRightAnswer, answer, result } = taskProgression();
+
+goodbye(name, countRightAnswer, answer, result);

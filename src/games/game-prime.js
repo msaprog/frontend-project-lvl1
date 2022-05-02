@@ -1,5 +1,8 @@
-import { getRandom, askStr } from '../index.js';
+import {
+  welcome, getRandom, askStr, goodbye,
+} from '../index.js';
 
+// ninth task
 const checkPrime = (checkNum) => {
   if (checkNum === 1) {
     return false;
@@ -12,13 +15,13 @@ const checkPrime = (checkNum) => {
   return true;
 };
 
-export const taskPrime = () => {
-  const minNumRandom = 1;
-  const maxNumRandom = 10;
+const taskPrime = () => {
+  const minNum = 1;
+  const maxNum = 10;
   let countRightAnswer = 0;
 
   while (countRightAnswer < 3) {
-    const num = getRandom(minNumRandom, maxNumRandom);
+    const num = getRandom(minNum, maxNum);
     console.log(`Question: ${num}`);
     const answer = askStr('Your answer: ');
 
@@ -35,4 +38,8 @@ export const taskPrime = () => {
   return countRightAnswer;
 };
 
-export default taskPrime;
+const name = welcome('Answer "yes" if given number is prime. Otherwise answer "no".');
+
+const countRightAnswer = taskPrime();
+
+goodbye(name, countRightAnswer, 'yes', 'no');

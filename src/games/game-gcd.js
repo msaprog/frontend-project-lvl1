@@ -1,15 +1,18 @@
-import { getRandom, askStr } from '../index.js';
+import {
+  welcome, getRandom, askStr, goodbye,
+} from '../index.js';
 
-export const taskGcd = () => {
-  const minNumRandom = 1;
-  const maxNumRandom = 18;
+// seventh task
+const taskGcd = () => {
+  const minNum = 1;
+  const maxNum = 18;
   let result;
   let answer;
   let countRightAnswer = 0;
 
   while (countRightAnswer < 3) {
-    const firstNum = getRandom(minNumRandom, maxNumRandom);
-    const secondNum = getRandom(minNumRandom, maxNumRandom);
+    const firstNum = getRandom(minNum, maxNum);
+    const secondNum = getRandom(minNum, maxNum);
 
     if (firstNum > secondNum) {
       result = secondNum;
@@ -37,4 +40,8 @@ export const taskGcd = () => {
   return { countRightAnswer, answer, result };
 };
 
-export default taskGcd;
+const name = welcome('Find the greatest common divisor of given numbers.');
+
+const { countRightAnswer, answer, result } = taskGcd();
+
+goodbye(name, countRightAnswer, answer, result);
