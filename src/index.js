@@ -57,12 +57,10 @@ const divider = (firstNum, secondNum) => {
 };
 
 // task progression
-const progressionGeneration = (firstNum, step) => {
+const progressionGeneration = (firstNum, step, amountOfElements) => {
   const progression = [];
-  const minNumElement = 5;
-  const maxNumElement = 15;
   let firstNumProgression = firstNum;
-  for (let i = 1; i < (getRandom(minNumElement, maxNumElement) + 1); i += 1) {
+  for (let i = 1; i < amountOfElements + 1; i += 1) {
     progression.push(firstNumProgression);
     firstNumProgression += step;
   }
@@ -87,6 +85,10 @@ export const cycle = (minNum, maxNum, minNumIndex, maxNumIndex, task) => {
   let step;
   let progression;
   let question;
+  let amountOfElements;
+
+  const minNumElement = 5;
+  const maxNumElement = 15;
 
   while (countRightAnswer < 3) {
     switch (task) {
@@ -178,11 +180,12 @@ export const cycle = (minNum, maxNum, minNumIndex, maxNumIndex, task) => {
         // формирование запроса
         firstNum = getRandom(minNum, maxNum);
         step = getRandom(minNumIndex, maxNumIndex);
+        amountOfElements = getRandom(minNumElement, maxNumElement);
 
-        progression = progressionGeneration(firstNum, step);
+        progression = progressionGeneration(firstNum, step, amountOfElements);
 
         // вычисление правильного ответа
-        question = getRandom(minNumIndex - 1, maxNumIndex - 1);
+        question = getRandom(0, amountOfElements);
         result = progression[question];
         progression[question] = '..';
 
