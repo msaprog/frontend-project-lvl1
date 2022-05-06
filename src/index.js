@@ -39,7 +39,7 @@ export const goodbye = (name, countRightAnswer, wrong, right) => {
   }
 };
 
-// task gcd 
+// task gcd
 const divider = (firstNum, secondNum) => {
   let result;
   if (firstNum > secondNum) {
@@ -59,10 +59,11 @@ const divider = (firstNum, secondNum) => {
 // task progression
 const progressionGeneration = (firstNum, step) => {
   const progression = [];
-  const minNumElement = 5;
-  const maxNumElement = 15;
+  // const minNumElement = 5;
+  // const maxNumElement = 15;
+  // (getRandom(minNumElement, maxNumElement) + 1
   let firstNumProgression = firstNum;
-  for (let i = 1; i < (getRandom(minNumElement, maxNumElement) +1); i += 1) {
+  for (let i = 1; i < 11; i += 1) {
     progression.push(firstNumProgression);
     firstNumProgression += step;
   }
