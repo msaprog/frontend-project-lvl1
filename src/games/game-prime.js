@@ -8,6 +8,6 @@ const maxNum = 20;
 
 const name = welcome('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-const { countRightAnswer, answer, result } = cycle(minNum, maxNum, 0, 0, 1);
+const { countRightAnswer, answer, result } = cycle(minNum, maxNum, 0, 0, 5);
 
 goodbye(name, countRightAnswer, answer, result);
