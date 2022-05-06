@@ -62,7 +62,7 @@ const progressionGeneration = (firstNum, step) => {
   const minNumElement = 5;
   const maxNumElement = 15;
   let firstNumProgression = firstNum;
-  for (let i = 0; i < getRandom(minNumElement, maxNumElement); i += 1) {
+  for (let i = 1; i < (getRandom(minNumElement, maxNumElement) +1); i += 1) {
     progression.push(firstNumProgression);
     firstNumProgression += step;
   }
