@@ -188,11 +188,11 @@ export const cycle = (minNum, maxNum, minNumIndex, maxNumIndex, task) => {
 
         // задание и ответ игрока
         console.log(`Question: ${progression.join(' ')}`);
-        answer = Number(askStr('Your answer: '));
+        answer = askStr('Your answer: ');
 
         // проверка ответа
         resultIndex = result;
-        answerIndex = answer;
+        answerIndex = Number(answer);
         break;
 
         // prime
