@@ -185,7 +185,7 @@ export const cycle = (minNum, maxNum, minNumIndex, maxNumIndex, task) => {
         progression = progressionGeneration(firstNum, step, amountOfElements);
 
         // вычисление правильного ответа
-        question = getRandom(0, amountOfElements);
+        question = getRandom(0, amountOfElements - 1);
         result = progression[question];
         progression[question] = '..';
 
