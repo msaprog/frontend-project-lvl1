@@ -1,16 +1,11 @@
-import {
-  welcome, goodbye, game, askStr,
-} from '../index.js';
+import { play } from '../index.js';
 import { getRandom } from '../add.js';
 
 // seventh task
 const minNum = 1;
 const maxNum = 18;
-let firstNum;
-let secondNum;
-let answerStr;
 
-const maxGeneralDivisor = (num1, num2) => {
+const findMaxDivisor = (num1, num2) => {
   let result;
   if (num1 > num2) {
     result = num2;
@@ -26,25 +21,21 @@ const maxGeneralDivisor = (num1, num2) => {
   return result;
 };
 
-const questionGame = () => {
-  firstNum = getRandom(minNum, maxNum);
-  secondNum = getRandom(minNum, maxNum);
+const getGameTask = () => {
+  const firstNum = getRandom(minNum, maxNum);
+  const secondNum = getRandom(minNum, maxNum);
+  const maxCommonDivider = findMaxDivisor(firstNum, secondNum);
 
-  console.log(`Question: ${firstNum} ${secondNum}`);
-
-  return maxGeneralDivisor(firstNum, secondNum);
+  return [maxCommonDivider, `Question: ${firstNum} ${secondNum}`];
 };
 
-const answerUser = () => {
-  answerStr = askStr('Your answer: ');
+const getPlayerResponse = (answerStr) => {
   if (Number.isNaN(Number(answerStr))) {
     return answerStr;
   }
   return Number(answerStr);
 };
 
-const name = welcome('Find the greatest common divisor of given numbers.');
+export const startGame = () => play('Find the greatest common divisor of given numbers.', getGameTask, getPlayerResponse);
 
-const [countRightAnswer, answer, result] = game(questionGame, answerUser);
-
-goodbye(name, countRightAnswer, answer, result);
+export default startGame;

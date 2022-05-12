@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-import '../src/games/game-games.js';
+import askName from '../src/cli.js';
+
+askName();

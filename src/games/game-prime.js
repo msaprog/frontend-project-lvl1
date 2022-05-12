@@ -1,13 +1,10 @@
-import {
-  welcome, goodbye, game, askStr,
-} from '../index.js';
+import { play } from '../index.js';
 import { getRandom } from '../add.js';
 
 // ninth task
 const minNum = 1;
 const maxNum = 20;
 let num;
-let answerStr;
 
 const checkPrime = (numCheck) => {
   if (numCheck === 1) {
@@ -21,19 +18,15 @@ const checkPrime = (numCheck) => {
   return 'yes';
 };
 
-const questionGame = () => {
+const getGameTask = () => {
   num = getRandom(minNum, maxNum);
-
-  console.log(`Question: ${num}`);
 
   const rigthAnswer = checkPrime(num);
 
-  return rigthAnswer;
+  return [rigthAnswer, `Question: ${num}`];
 };
 
-const answerUser = () => {
-  answerStr = askStr('Your answer: ');
-
+const getPlayerResponse = (answerStr) => {
   if (answerStr === 'yes' && checkPrime(num)) {
     return 'yes';
   } if (answerStr === 'no' && checkPrime(num)) {
@@ -42,8 +35,6 @@ const answerUser = () => {
   return answerStr;
 };
 
-const name = welcome('Answer "yes" if given number is prime. Otherwise answer "no".');
+export const startGame = () => play('Answer "yes" if given number is prime. Otherwise answer "no".', getGameTask, getPlayerResponse);
 
-const [countRightAnswer, answer, result] = game(questionGame, answerUser);
-
-goodbye(name, countRightAnswer, answer, result);
+export default startGame;

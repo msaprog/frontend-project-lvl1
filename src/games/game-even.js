@@ -1,20 +1,15 @@
-import {
-  welcome, goodbye, game, askStr,
-} from '../index.js';
+import { play } from '../index.js';
 import { getRandom } from '../add.js';
 
 // fifth task
 const minNum = 1;
 const maxNum = 100;
 let num;
-let answerStr;
 
-const questionGame = () => {
+const getGameTask = () => {
   let rigthAnswer;
 
   num = getRandom(minNum, maxNum);
-
-  console.log(`Question: ${num}`);
 
   if (num % 2 === 0) {
     rigthAnswer = 'yes';
@@ -22,12 +17,10 @@ const questionGame = () => {
     rigthAnswer = 'no';
   }
 
-  return rigthAnswer;
+  return [rigthAnswer, `Question: ${num}`];
 };
 
-const answerUser = () => {
-  answerStr = askStr('Your answer: ');
-
+const getPlayerResponse = (answerStr) => {
   if (answerStr === 'yes' && num % 2 === 0) {
     return 'yes';
   } if (answerStr === 'no' && num % 2 !== 0) {
@@ -36,8 +29,6 @@ const answerUser = () => {
   return answerStr;
 };
 
-const name = welcome('Answer "yes" if the number is even, otherwise answer "no".');
+export const startGame = () => play('Answer "yes" if the number is even, otherwise answer "no".', getGameTask, getPlayerResponse);
 
-const [countRightAnswer, answer, result] = game(questionGame, answerUser);
-
-goodbye(name, countRightAnswer, answer, result);
+export default startGame;

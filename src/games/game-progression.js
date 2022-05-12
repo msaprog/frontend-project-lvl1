@@ -1,6 +1,4 @@
-import {
-  welcome, goodbye, game, askStr,
-} from '../index.js';
+import { play } from '../index.js';
 import { getRandom } from '../add.js';
 
 // eighth task
@@ -11,10 +9,7 @@ const maxStep = 10;
 const minNumElements = 5;
 const maxNumElements = 15;
 
-let num;
-let answerStr;
-
-const progressionGeneration = (startNum, stepElements, countElements) => {
+const generateProgression = (startNum, stepElements, countElements) => {
   const progression = [];
   let firstNumProgression = startNum;
   for (let i = 1; i < countElements + 1; i += 1) {
@@ -24,32 +19,27 @@ const progressionGeneration = (startNum, stepElements, countElements) => {
   return progression;
 };
 
-const questionGame = () => {
-  num = getRandom(minNum, maxNum);
+const getGameTask = () => {
+  const num = getRandom(minNum, maxNum);
   const step = getRandom(minStep, maxStep);
   const amountOfElements = getRandom(minNumElements, maxNumElements);
 
-  const progression = progressionGeneration(num, step, amountOfElements);
+  const progression = generateProgression(num, step, amountOfElements);
 
   const question = getRandom(0, amountOfElements - 1);
   const rigthAnswer = progression[question];
   progression[question] = '..';
 
-  console.log(`Question: ${progression.join(' ')}`);
-
-  return rigthAnswer;
+  return [rigthAnswer, `Question: ${progression.join(' ')}`];
 };
 
-const answerUser = () => {
-  answerStr = askStr('Your answer: ');
+const getPlayerResponse = (answerStr) => {
   if (Number.isNaN(Number(answerStr))) {
     return answerStr;
   }
   return Number(answerStr);
 };
 
-const name = welcome('What number is missing in the progression?');
+export const startGame = () => play('What number is missing in the progression?', getGameTask, getPlayerResponse);
 
-const [countRightAnswer, answer, result] = game(questionGame, answerUser);
-
-goodbye(name, countRightAnswer, answer, result);
+export default startGame;
