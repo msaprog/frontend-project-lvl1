@@ -1,5 +1,5 @@
 import { play } from '../index.js';
-import { getRandom } from '../add.js';
+import { getRandom } from '../getrandom.js';
 
 // eighth task
 const minNum = 1;
@@ -12,7 +12,7 @@ const maxNumElements = 15;
 const generateProgression = (startNum, stepElements, countElements) => {
   const progression = [];
   let firstNumProgression = startNum;
-  for (let i = 1; i < countElements + 1; i += 1) {
+  for (let i = 0; i < countElements; i += 1) {
     progression.push(firstNumProgression);
     firstNumProgression += stepElements;
   }
@@ -30,16 +30,9 @@ const getGameTask = () => {
   const rigthAnswer = progression[question];
   progression[question] = '..';
 
-  return [rigthAnswer, `Question: ${progression.join(' ')}`];
+  return [String(rigthAnswer), `Question: ${progression.join(' ')}`];
 };
 
-const getPlayerResponse = (answerStr) => {
-  if (Number.isNaN(Number(answerStr))) {
-    return answerStr;
-  }
-  return Number(answerStr);
-};
-
-export const startGame = () => play('What number is missing in the progression?', getGameTask, getPlayerResponse);
+export const startGame = () => play('What number is missing in the progression?', getGameTask);
 
 export default startGame;

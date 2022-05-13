@@ -1,5 +1,5 @@
 import { play } from '../index.js';
-import { getRandom } from '../add.js';
+import { getRandom } from '../getrandom.js';
 
 // fifth task
 const minNum = 1;
@@ -20,15 +20,6 @@ const getGameTask = () => {
   return [rigthAnswer, `Question: ${num}`];
 };
 
-const getPlayerResponse = (answerStr) => {
-  if (answerStr === 'yes' && num % 2 === 0) {
-    return 'yes';
-  } if (answerStr === 'no' && num % 2 !== 0) {
-    return 'no';
-  }
-  return answerStr;
-};
-
-export const startGame = () => play('Answer "yes" if the number is even, otherwise answer "no".', getGameTask, getPlayerResponse);
+export const startGame = () => play('Answer "yes" if the number is even, otherwise answer "no".', getGameTask);
 
 export default startGame;

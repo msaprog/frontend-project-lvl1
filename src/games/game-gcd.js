@@ -1,5 +1,5 @@
 import { play } from '../index.js';
-import { getRandom } from '../add.js';
+import { getRandom } from '../getrandom.js';
 
 // seventh task
 const minNum = 1;
@@ -26,16 +26,9 @@ const getGameTask = () => {
   const secondNum = getRandom(minNum, maxNum);
   const maxCommonDivider = findMaxDivisor(firstNum, secondNum);
 
-  return [maxCommonDivider, `Question: ${firstNum} ${secondNum}`];
+  return [String(maxCommonDivider), `Question: ${firstNum} ${secondNum}`];
 };
 
-const getPlayerResponse = (answerStr) => {
-  if (Number.isNaN(Number(answerStr))) {
-    return answerStr;
-  }
-  return Number(answerStr);
-};
-
-export const startGame = () => play('Find the greatest common divisor of given numbers.', getGameTask, getPlayerResponse);
+export const startGame = () => play('Find the greatest common divisor of given numbers.', getGameTask);
 
 export default startGame;

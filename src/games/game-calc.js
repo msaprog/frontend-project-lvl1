@@ -1,5 +1,5 @@
 import { play } from '../index.js';
-import { getRandom } from '../add.js';
+import { getRandom } from '../getrandom.js';
 
 // sixth task
 const minNum = 1;
@@ -24,16 +24,9 @@ const getGameTask = () => {
     rigthAnswer = firstNum * secondNum;
   }
 
-  return [rigthAnswer, `Question: ${firstNum} ${signStr} ${secondNum}`];
+  return [String(rigthAnswer), `Question: ${firstNum} ${signStr} ${secondNum}`];
 };
 
-const getPlayerResponse = (answerStr) => {
-  if (Number.isNaN(Number(answerStr))) {
-    return answerStr;
-  }
-  return Number(answerStr);
-};
-
-export const startGame = () => play('What is the result of the expression?', getGameTask, getPlayerResponse);
+export const startGame = () => play('What is the result of the expression?', getGameTask);
 
 export default startGame;

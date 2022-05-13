@@ -1,7 +1,9 @@
 import readlineSync from 'readline-sync';
 
-export const play = (info, getGameTask, getPlayerResponse) => {
-  let countRightAnswer = 0;
+// export const play = (info, getGameTask, getPlayerResponse) => {
+export const play = (info, getGameTask) => {
+  const maxCountRigthAnswer = 3;
+  let countRigthAnswer;
 
   let rigthAnswer;
   let answer;
@@ -12,22 +14,20 @@ export const play = (info, getGameTask, getPlayerResponse) => {
   console.log(`Hello, ${nameUser}!`);
   console.log(info);
 
-  while (countRightAnswer < 3) {
+  for (countRigthAnswer = 0; countRigthAnswer < maxCountRigthAnswer; countRigthAnswer += 1) {
     [rigthAnswer, task] = getGameTask();
     console.log(task);
 
-    const answerStr = readlineSync.question('Your answer: ');
-    answer = getPlayerResponse(answerStr);
+    answer = readlineSync.question('Your answer: ');
 
     if (rigthAnswer === answer) {
       console.log('Correct!');
-      countRightAnswer += 1;
     } else {
       break;
     }
   }
 
-  if (countRightAnswer === 3) {
+  if (countRigthAnswer === maxCountRigthAnswer) {
     console.log(`Congratulations, ${nameUser}!`);
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'.`);
