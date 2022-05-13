@@ -1,9 +1,7 @@
 import readlineSync from 'readline-sync';
 
-// export const play = (info, getGameTask, getPlayerResponse) => {
 export const play = (info, getGameTask) => {
   const maxCountRigthAnswer = 3;
-  let countRigthAnswer;
 
   let rigthAnswer;
   let answer;
@@ -14,7 +12,7 @@ export const play = (info, getGameTask) => {
   console.log(`Hello, ${nameUser}!`);
   console.log(info);
 
-  for (countRigthAnswer = 0; countRigthAnswer < maxCountRigthAnswer; countRigthAnswer += 1) {
+  for (let countRigthAnswer = 0; countRigthAnswer < maxCountRigthAnswer; countRigthAnswer += 1) {
     [rigthAnswer, task] = getGameTask();
     console.log(task);
 
@@ -23,16 +21,13 @@ export const play = (info, getGameTask) => {
     if (rigthAnswer === answer) {
       console.log('Correct!');
     } else {
-      break;
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'.`);
+      console.log(`Let's try again, ${nameUser}!`);
+      return;
     }
   }
 
-  if (countRigthAnswer === maxCountRigthAnswer) {
-    console.log(`Congratulations, ${nameUser}!`);
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rigthAnswer}'.`);
-    console.log(`Let's try again, ${nameUser}!`);
-  }
+  console.log(`Congratulations, ${nameUser}!`);
 };
 
 export default play;
