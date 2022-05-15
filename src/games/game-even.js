@@ -4,6 +4,7 @@ import { getRandom } from '../getrandom.js';
 // fifth task
 const minNum = 1;
 const maxNum = 100;
+const questionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 let num;
 
 const getGameTask = () => {
@@ -20,6 +21,6 @@ const getGameTask = () => {
   return [rigthAnswer, `Question: ${num}`];
 };
 
-export const startGame = () => play('Answer "yes" if the number is even, otherwise answer "no".', getGameTask);
+export const startGame = () => play(questionGame, getGameTask);
 
 export default startGame;

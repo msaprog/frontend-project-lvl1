@@ -8,6 +8,7 @@ const minStep = 1;
 const maxStep = 10;
 const minNumElements = 5;
 const maxNumElements = 15;
+const questionGame = 'What number is missing in the progression?';
 
 const generateProgression = (startNum, stepElements, countElements) => {
   const progression = [];
@@ -33,6 +34,6 @@ const getGameTask = () => {
   return [String(rigthAnswer), `Question: ${progression.join(' ')}`];
 };
 
-export const startGame = () => play('What number is missing in the progression?', getGameTask);
+export const startGame = () => play(questionGame, getGameTask);
 
 export default startGame;

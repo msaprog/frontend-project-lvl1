@@ -4,6 +4,7 @@ import { getRandom } from '../getrandom.js';
 // ninth task
 const minNum = 1;
 const maxNum = 20;
+const questionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 let num;
 
 const checkPrime = (numCheck) => {
@@ -32,6 +33,6 @@ const getGameTask = () => {
   return [rigthAnswer, `Question: ${num}`];
 };
 
-export const startGame = () => play('Answer "yes" if given number is prime. Otherwise answer "no".', getGameTask);
+export const startGame = () => play(questionGame, getGameTask);
 
 export default startGame;

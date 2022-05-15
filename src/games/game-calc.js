@@ -6,6 +6,7 @@ const minNum = 1;
 const maxNum = 10;
 const minNumSign = 0;
 const maxNumSign = 2;
+const questionGame = 'What is the result of the expression?';
 
 const getGameTask = () => {
   let rigthAnswer;
@@ -27,6 +28,6 @@ const getGameTask = () => {
   return [String(rigthAnswer), `Question: ${firstNum} ${signStr} ${secondNum}`];
 };
 
-export const startGame = () => play('What is the result of the expression?', getGameTask);
+export const startGame = () => play(questionGame, getGameTask);
 
 export default startGame;

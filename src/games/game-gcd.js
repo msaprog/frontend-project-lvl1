@@ -4,6 +4,7 @@ import { getRandom } from '../getrandom.js';
 // seventh task
 const minNum = 1;
 const maxNum = 18;
+const questionGame = 'Find the greatest common divisor of given numbers.';
 
 const findMaxDivisor = (num1, num2) => {
   let result;
@@ -29,6 +30,6 @@ const getGameTask = () => {
   return [String(maxCommonDivider), `Question: ${firstNum} ${secondNum}`];
 };
 
-export const startGame = () => play('Find the greatest common divisor of given numbers.', getGameTask);
+export const startGame = () => play(questionGame, getGameTask);
 
 export default startGame;
