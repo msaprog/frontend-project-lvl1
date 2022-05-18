@@ -14,7 +14,7 @@ export const play = (info, getGameTask) => {
 
   for (let countRigthAnswer = 0; countRigthAnswer < maxCountRigthAnswer; countRigthAnswer += 1) {
     [rigthAnswer, task] = getGameTask();
-    console.log(task);
+    console.log(`Question: ${task}`);
 
     answer = readlineSync.question('Your answer: ');
 

@@ -30,7 +30,9 @@ const getGameTask = () => {
     rigthAnswer = 'no';
   }
 
-  return [rigthAnswer, `Question: ${num}`];
+  const task = `${num}`;
+
+  return [rigthAnswer, task];
 };
 
 export const startGame = () => play(questionGame, getGameTask);

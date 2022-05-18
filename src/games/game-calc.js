@@ -25,7 +25,8 @@ const getGameTask = () => {
     rigthAnswer = firstNum * secondNum;
   }
 
-  return [String(rigthAnswer), `Question: ${firstNum} ${signStr} ${secondNum}`];
+  const task = `${firstNum} ${signStr} ${secondNum}`;
+  return [String(rigthAnswer), task];
 };
 
 export const startGame = () => play(questionGame, getGameTask);

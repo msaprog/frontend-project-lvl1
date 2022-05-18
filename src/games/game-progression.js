@@ -31,7 +31,9 @@ const getGameTask = () => {
   const rigthAnswer = progression[question];
   progression[question] = '..';
 
-  return [String(rigthAnswer), `Question: ${progression.join(' ')}`];
+  const task = `${progression.join(' ')}`;
+
+  return [String(rigthAnswer), task];
 };
 
 export const startGame = () => play(questionGame, getGameTask);

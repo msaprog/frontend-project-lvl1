@@ -27,7 +27,9 @@ const getGameTask = () => {
   const secondNum = getRandom(minNum, maxNum);
   const maxCommonDivider = findMaxDivisor(firstNum, secondNum);
 
-  return [String(maxCommonDivider), `Question: ${firstNum} ${secondNum}`];
+  const task = `${firstNum} ${secondNum}`;
+
+  return [String(maxCommonDivider), task];
 };
 
 export const startGame = () => play(questionGame, getGameTask);
