@@ -26,6 +26,7 @@ const getGameTask = () => {
   }
 
   const task = `${firstNum} ${signStr} ${secondNum}`;
+
   return [String(rigthAnswer), task];
 };
 
